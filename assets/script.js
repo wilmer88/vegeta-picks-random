@@ -43,7 +43,7 @@ generateBtn.addEventListener("click", function catchedChar() {
     var password = password.concat(createdrandom[i]);
   }
   password.push.generatePassword();
-  alert(password + "Sorry only able to genorate random number password");
+  alert(password + "Sorry only able to generate random number password");
 });
 // recreated random specialcharacter/upper and lowercase same as the number Genarater
 // if (confirmedUpperCase == confirm) {

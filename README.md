@@ -27,3 +27,10 @@ then I took those numbers and stored them in a variable called 'characterHolder'
 
 finally '.pushed' 'characterHolder' to password and created an 'alert'
 that gave the users generated password.
+
+last comment:
+was not successful in producing random password using numbers wih this code
+
+'for (i = 0; i < parseInt(amountOfChar); i++) {
+var createdrandom = Math.floor(Math.random() \* characterHolder.length);
+var password = password.concat(createdrandom[i]);'
