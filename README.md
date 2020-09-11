@@ -16,21 +16,20 @@ started by adding an 'eventlistener' to 'generate password' then added promts to
 user wanted to use special characters, uppercase, numbers etc.
 
 Was able to make the 'var'='prompt' that asked 'howmanycharacters' do you want in 'password'
-to Wrap the 'howmanycharacters' into a 'function' that called backed if the character selected was '<' '"8"' & than 120 characters
+to Wrap the 'howmanycharacters' into a 'function' that calls itself backed if the character selected is '<' '"8"' & > 120 characters.
 
 Was also able to make the 'var' 'confirmed' that confirmed the user to unclude numbers to 'password'
 
-used 'Math.floor' and 'Math.random()' to generate the selected 'howmanycharacters'
-and 'confirmednumber' to generate a random numbers with thelenght of 'howmanycharacters'
+used 'Math.floor' and 'Math.random()' to generate the selected variable 'howmanycharacters'
+and variable 'confirmednumber' to generate a random numbers with the lenght of 'howmanycharacters' "the selected amount of CHAR"
 
-then I took those numbers and stored them in a variable called 'characterHolder'
-
-finally '.pushed' 'characterHolder' to password and created an 'alert'
+then I took those numbers and stored them in a variable called 'characterHolder' and with a for loop
+used to finally '.pushed' 'characterHolder' to password and created an 'alert'
 that gave the users generated password.
 
-last comment:
-was not successful in producing random password using numbers wih this code
+last comments:
 
+was not successful in producing random password using numbers wih this code
 'for (i = 0; i < parseInt(amountOfChar); i++) {
 var createdrandom = Math.floor(Math.random() \* characterHolder.length);
 var password = password.concat(createdrandom[i]);'

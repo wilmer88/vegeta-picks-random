@@ -11,7 +11,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function catchedChar() {
-  var amountOfChar = prompt("how many characters in password? 8-120");
+  var amountOfChar = prompt("How many characters in password? 8-120");
   if (amountOfChar < 8 || amountOfChar > 120) {
     alert("must be between 8-120 characters");
     catchedChar();
@@ -19,11 +19,13 @@ generateBtn.addEventListener("click", function catchedChar() {
     alert("go head");
   }
 
-  confirmedNumbers = confirm("would you like to include numbers");
+  confirmedNumbers = confirm("Would you like to include numbers?");
 
   var confirmedUpperCase = confirm("do you want to use upper case letters");
 
-  var confirmedLowercase = confirm("do you want to use lowercase letters"); //dummy prompt
+  var confirmedLowercase = confirm(
+    "Would you like to include lowercase letters"
+  ); //dummy prompt
 
   var specialCharecter = confirm("do you want to use special characters"); //dummy prompt
 
