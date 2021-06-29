@@ -1,40 +1,56 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var defPasword = [];
+var posiblePassword = [];
 var empty = [];
-var letters = ["A","B","c","D"]
+var letters = ["A", "B", "C", "D"];
+var lowerLetters = ["a", "b", "c", "d"];
+var num = ["1", "2", "3", "4", "5"];
+
 var passwordText = document.querySelector("#password");
-passwordText.value = empty;
+
 // Write password to the #password input
 function writePassword() {
-  var amountOfChar = prompt("choose amount of characters in password? 8-120");
-  if (amountOfChar < 8 || amountOfChar > 120) {
-    alert("must be between 8-120 characters");
-    chooseChar();
-  } else {
-    var confirmedNumbers = confirm("Would you like to include numbers?");
-    var confirmedLetters = confim("would you like letters in passoword")
-      if(confirmedLetters == true) {
-        Math.random
+  var amountOfChar = parseInt(
+    prompt("choose amount of characters in password? 8-120")
+  );
 
-      }
-       
-      }
-    
-    console.log(amountOfChar);
-  }
+  var confirmedNumbers = confirm("Would you like to include numbers?");
   if (confirmedNumbers == true) {
-    for (var i = 0; i < amountOfChar; i++) {
-      randomNum = Math.floor(Math.random() * 10);
-      empty.push(randomNum);
-      passwordText.value = empty;
-    }
+    empty.push(num);
+  }
 
-    // var numToGen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    // var randomPick = Math.floor(Math.random() * numToGen.length);
-    // var ranNum = numToGen[randomPick];
-    // characterHolder.push(ranNum);
-  } else {
+  var confirmedUperCaseLetters = confirm(
+    "would you like upper case letters in passoword"
+  );
+  if (confirmedUperCaseLetters == true) {
+    empty.push(letters);
+  }
+  var confirmedLowercaseLetter = confirm(
+    "would you like lower case letters in passoword"
+  );
+  if (confirmedLowercaseLetter == true) {
+    empty.push(lowerLetters);
+  }
+  if (
+    confirmedNumbers == true &&
+    confirmedLowercaseLetter == true &&
+    confirmedUperCaseLetters == true
+  ) {
+    for (var i = 0; i < amountOfChar; i++) {
+      randomNum = Math.floor(Math.random() * empty.length);
+      posiblePassword.push(empty[randomNum]);
+    }
+    passwordText.value = posiblePassword;
+  } else if (
+    confirmedNumbers == false &&
+    confirmedLowercaseLetter == false &&
+    confirmedUperCaseLetters == false
+  ) {
     alert("password must have numbers");
+    writePassword();
+  } else if (amountOfChar < 8 || amountOfChar > 120) {
+    alert("must be between 8-120 characters");
     writePassword();
   }
 }
