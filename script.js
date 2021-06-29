@@ -1,19 +1,75 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var defPasword = [];
 var posiblePassword = [];
 var empty = [];
-var letters = ["A", "B", "C", "D"];
-var lowerLetters = ["a", "b", "c", "d"];
-var num = ["1", "2", "3", "4", "5"];
+var letters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var lowerLetters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var num = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var passwordText = document.querySelector("#password");
 
 // Write password to the #password input
 function writePassword() {
   var amountOfChar = parseInt(
-    prompt("choose amount of characters in password? 8-120")
+    prompt("choose betweem 8-120 characters for password?")
   );
+  if (amountOfChar < 8 || amountOfChar > 120 || isNaN(amountOfChar) === true) {
+    alert(
+      "password must be between 8-120 characters or amount of characters enterd must be a number "
+    );
+    writePassword();
+  }
 
   var confirmedNumbers = confirm("Would you like to include numbers?");
   if (confirmedNumbers == true) {
@@ -42,8 +98,8 @@ function writePassword() {
     console.log(empty);
   }
   if (
-    confirmedNumbers == true &&
-    confirmedLowercaseLetter == true &&
+    confirmedNumbers == true ||
+    confirmedLowercaseLetter == true ||
     confirmedUperCaseLetters == true
   ) {
     for (var i = 0; i < amountOfChar; i++) {
@@ -53,15 +109,13 @@ function writePassword() {
       console.log(posiblePassword);
     }
     passwordText.value = posiblePassword;
-  } else if (
+  }
+  if (
     confirmedNumbers == false &&
     confirmedLowercaseLetter == false &&
     confirmedUperCaseLetters == false
   ) {
-    alert("password must have numbers");
-    writePassword();
-  } else if (amountOfChar < 8 || amountOfChar > 120) {
-    alert("must be between 8-120 characters");
+    alert("password must have numbers or letters");
     writePassword();
   }
 }
