@@ -17,20 +17,29 @@ function writePassword() {
 
   var confirmedNumbers = confirm("Would you like to include numbers?");
   if (confirmedNumbers == true) {
-    empty.push(num);
+    for (var i = 0; i < num.length; i++) {
+      empty = empty + num[i];
+    }
+    console.log(empty);
   }
 
   var confirmedUperCaseLetters = confirm(
     "would you like upper case letters in passoword"
   );
   if (confirmedUperCaseLetters == true) {
-    empty.push(letters);
+    for (var i = 0; i < letters.length; i++) {
+      empty = empty + letters[i];
+    }
+    console.log(empty);
   }
   var confirmedLowercaseLetter = confirm(
     "would you like lower case letters in passoword"
   );
   if (confirmedLowercaseLetter == true) {
-    empty.push(lowerLetters);
+    for (var i = 0; i < lowerLetters.length; i++) {
+      empty = empty + lowerLetters[i];
+    }
+    console.log(empty);
   }
   if (
     confirmedNumbers == true &&
@@ -39,7 +48,9 @@ function writePassword() {
   ) {
     for (var i = 0; i < amountOfChar; i++) {
       randomNum = Math.floor(Math.random() * empty.length);
-      posiblePassword.push(empty[randomNum]);
+      console.log(randomNum);
+      posiblePassword = posiblePassword + empty[randomNum];
+      console.log(posiblePassword);
     }
     passwordText.value = posiblePassword;
   } else if (
