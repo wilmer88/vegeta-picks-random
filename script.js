@@ -79,7 +79,7 @@ function writePassword() {
     return;
   }
 
-  var confirmedNumbers = confirm("Would you like to include numbers?");
+  var confirmedNumbers = confirm("click ok to include numbers?");
   if (confirmedNumbers == true) {
     for (var i = 0; i < num.length; i++) {
       characterHolder = characterHolder + num[i];
@@ -87,7 +87,7 @@ function writePassword() {
   }
 
   var confirmedUperCaseLetters = confirm(
-    "would you like upper case letters in passoword"
+    "click ok to include uppercase letters in passoword"
   );
   if (confirmedUperCaseLetters == true) {
     for (var i = 0; i < letters.length; i++) {
@@ -95,7 +95,7 @@ function writePassword() {
     }
   }
   var confirmedLowercaseLetter = confirm(
-    "would you like lower case letters in passoword"
+    "click ok to include lowercase letters in passoword"
   );
   if (confirmedLowercaseLetter == true) {
     for (var i = 0; i < lowerLetters.length; i++) {
@@ -103,7 +103,7 @@ function writePassword() {
     }
   }
   var confirmSpecialChar = confirm(
-    "would you like to include special characters in password?"
+    "click ok to include special characters in password?"
   );
   if (confirmSpecialChar == true) {
     for (var i = 0; i < specialCharacters.length; i++) {
