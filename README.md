@@ -9,7 +9,7 @@ source: Georgia Tech Coding Bootcamp
 Was asked to code the javascript on the index.html given by the the bootcamp instructor.
 When you open index.html in browser, you can see written password generator and inside the box you'll see a smaller box with secure password and a generate Password button.
 
-My job was to create prompts that asks the user, what criteria(numbers,letters and special charters) the user wants in the password that is going to be generated
+My job was to create prompts that asks the user, what criteria(numbers,letters and special charters) the user wants in their password that is to be generated.
 
 after creating hard code:
 started by adding an 'eventlistener' to 'generate password' then added promts to ask for confirmation if
@@ -27,12 +27,7 @@ then I took those numbers and stored them in a variable called 'characterHolder'
 used to finally '.pushed' 'characterHolder' to password and created an 'alert'
 that gave the users generated password.
 
-last comments:
 
-was not successful in producing random password using numbers wih this code
-'for (i = 0; i < parseInt(amountOfChar); i++) {
-var createdrandom = Math.floor(Math.random() \* characterHolder.length);
-var password = password.concat(createdrandom[i]);'
 
 ![screenshot](./assets/images/shot1.png)
 ![screenshot](./assets/images/shot2.png)
